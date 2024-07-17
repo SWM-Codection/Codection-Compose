@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  postgres: 
+    image: postgres:13
+    restart: always
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    env_file:
+      - .env
+  redis:
+    image: redis:7
+    restart: always
+    command:
+      - /bin/sh
+      - -c
+      - redis-server --requirepass "$${REDIS_PASSWORD:?REDIS_PASSWORD variable is not set}"
+    ports:
+      - "${REDIS_PORT}:6379"
+    env_file:
+      - .env
