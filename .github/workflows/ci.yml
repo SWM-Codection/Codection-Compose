@@ -12,6 +12,13 @@ jobs:
     - name: checkout git submodules 
       uses: actions/checkout@v4
 
+    - name: setup java 
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        cache: 'gradle'
+
     - name: executing bootstrap.sh 
       run: chmod +x ./bootstrap.sh && /bin/bash ./bootstrap.sh
 
