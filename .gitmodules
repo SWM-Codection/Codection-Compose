@@ -1,0 +1,3 @@
+[submodule "Codection-Service-Discovery"]
+	path = Codection-Service-Discovery
+	url = https://github.com/SWM-Codection/Codection-Service-Discovery

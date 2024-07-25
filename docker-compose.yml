@@ -19,3 +19,16 @@ services:
       - "${REDIS_PORT}:6379"
     env_file:
       - .env
+  eureka:
+    build:
+      context: ./Codection-Service-Discovery/build/docker
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "${EUREKA_PORT}:8761"
+    environment:
+      - PATH=/opt/java/bin:$$PATH
+    volumes:
+      - /tmp:/tmp
+    env_file:
+      - .env
