@@ -18,6 +18,9 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
         cache: 'gradle'
+        cache-dependency-path: | # optional
+          Codection-Service-Discovery/*.gradle*
+          Codection-Service-Discovery/**/gradle-wrapper.properties
 
     - name: executing bootstrap.sh 
       run: chmod +x ./bootstrap.sh && /bin/bash ./bootstrap.sh
