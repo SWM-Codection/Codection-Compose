@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: checkout git submodules 
-    - uses: actions/checkout@v4
+      uses: actions/checkout@v4
 
     - name: executing bootstrap.sh 
-    - run: chmod +x ./bootstrap.sh && /bin/bash ./bootstrap.sh
+      run: chmod +x ./bootstrap.sh && /bin/bash ./bootstrap.sh
 
     - name: setting up docker-compose
-    - uses: hoverkraft-tech/compose-action@v2.0.1
+      uses: hoverkraft-tech/compose-action@v2.0.1
       with: 
         compose-file: ./docker-compose.yml
     
