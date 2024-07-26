@@ -19,12 +19,15 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: executing bootstrap.sh 
-      run: chmod +x ./bootstrap.sh && /bin/bash ./bootstrap.sh
+    - name: setup codection-compose
+      run: | 
+        git clone https://github.com/SWM-Codection/Codection-Compose .codection
+        chmod +x ./.codection/bootstrap.sh
+        /bin/bash ./.codection/bootstrap.sh
 
-    - name: setting up docker-compose
+    - name: run codectioncompose
       uses: hoverkraft-tech/compose-action@v2.0.1
       with: 
-        compose-file: ./docker-compose.yml
+        compose-file: ./.codection/docker-compose.yml
     
   
