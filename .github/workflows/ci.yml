@@ -22,12 +22,13 @@ jobs:
     - name: setup codection-compose
       run: | 
         git clone https://github.com/SWM-Codection/Codection-Compose .codection
-        chmod +x ./.codection/bootstrap.sh
-        /bin/bash ./.codection/bootstrap.sh
+        cd .codection
+        chmod +x ./bootstrap.sh
+        /bin/bash ./bootstrap.sh
 
-    - name: run codectioncompose
+    - name: run codection-compose
       uses: hoverkraft-tech/compose-action@v2.0.1
       with: 
-        compose-file: ./.codection/docker-compose.yml
+        compose-file: ./docker-compose.yml
     
   
