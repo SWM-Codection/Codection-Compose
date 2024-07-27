@@ -4,6 +4,15 @@ description: 'Set Up Codection Compose'
 runs: 
   using: 'composite' 
   steps: 
+    - name: checkout git submodules 
+      uses: actions/checkout@v4
+
+    - name: setup java 
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        
     - name: setup codection-compose
       shell: bash
       run: |
