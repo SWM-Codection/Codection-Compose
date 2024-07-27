@@ -5,6 +5,7 @@ runs:
   using: 'composite' 
   steps: 
     - name: setup codection-compose
+      shell: bash
       run: |
         git clone https://github.com/SWM-Codection/Codection-Compose .codection
         cd .codection
